@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "fdc.local.vb"
+  config.vm.box = "fdc.local.vb_lord_knight"
   config.vm.box_url = "package.box"
 
   # Disable automatic box update checking. If you disable this, then
