@@ -11,3 +11,9 @@ echo "transferring phpmyadmin config.inc.php file"
 cat /vagrant/conf/config.inc.php
 cp /vagrant/conf/config.inc.php /etc/phpMyAdmin/config.inc.php
 sudo service httpd restart
+
+echo "transferring ssl configuration"
+sudo yum install mod_ssl
+cat /vagrant/conf/vhost_ssl.conf
+cp /vagrant/conf/vhost_ssl.conf /etc/httpd/conf.d/vhost_ssl.conf
+sudo service httpd restart
