@@ -10,7 +10,6 @@ cp /vagrant/conf/php.ini /etc/php.ini
 echo "transferring phpmyadmin config.inc.php file"
 cat /vagrant/conf/config.inc.php
 cp /vagrant/conf/config.inc.php /etc/phpMyAdmin/config.inc.php
-sudo service httpd restart
 
 echo "transferring ssl configuration"
 sudo yum install mod_ssl
