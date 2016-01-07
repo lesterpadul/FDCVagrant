@@ -32,7 +32,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.33.10"
+  # config.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -47,4 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # provisions
   config.vm.provision :shell, :path => "./provision/setup_cnf.sh", privileged: true, run: "once"
+
+  # start up
+  config.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
 end
