@@ -108,5 +108,5 @@ $cfg['SaveDir']   = '/var/lib/phpMyAdmin/save';
  * page if any of the required Tables for the relation features is not found
  */
 $cfg['PmaNoRelation_DisableWarning'] = TRUE;
-$cfg['LoginCookieValidity'] = 999999999999999;
+$cfg['LoginCookieValidity'] = 9999999;
 ?>

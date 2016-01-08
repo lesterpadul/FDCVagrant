@@ -1,2 +1,3 @@
-echo "starting httpd"
-sudo service httpd restart
+echo "Restart HTTPD"
+sudo service httpd stop
+sudo service httpd start
