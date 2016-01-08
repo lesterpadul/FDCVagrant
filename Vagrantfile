@@ -24,7 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # run phpunit setup
     phpunit.vm.provision :shell, :path => "./provision/setup_cnf_phpunit.sh", privileged: true, run: "once"
     phpunit.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
-    
+
     # virtual machine information
     phpunit.vm.provider "virtualbox" do |v|
       v.name = "phpunit-machine"
@@ -34,9 +34,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # nc
   config.vm.define "nc" do |nc|
     # run php unit setup
-    nc.vm.provisio n:shell, :path => "./provision/setup_cnf_nc.sh", privileged: true, run: "once"
+    nc.vm.provisio :shell, :path => "./provision/setup_cnf_nc.sh", privileged: true, run: "once"
     nc.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
-    
+
     # virtual machine information
     nc.vm.provider "virtualbox" do |v|
       v.name = "nc-machine"
