@@ -1,5 +1,10 @@
 # workspace files
 workspace/*
+!workspace/cgi-bin
+!workspace/err
+!workspace/html
+!workspace/icons
+!workspace/fdc_test
 
 # box
 package.box
