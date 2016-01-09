@@ -1,0 +1,13 @@
+@ECHO OFF
+
+ECHO HALTING VAGRANT
+
+CD ../../
+
+vagrant halt
+
+ECHO.
+ECHO VAGRANT STOPPED
+
+echo.
+PAUSE

@@ -10,4 +10,5 @@ CD commands/windows
 
 sh vagrant-ssh-phpunit.sh
 
+echo.
 PAUSE

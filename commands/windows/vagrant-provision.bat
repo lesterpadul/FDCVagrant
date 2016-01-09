@@ -6,4 +6,5 @@ CD ../../
 
 vagrant provision
 
+echo.
 PAUSE
