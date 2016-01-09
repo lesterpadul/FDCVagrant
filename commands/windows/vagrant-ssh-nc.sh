@@ -1,0 +1,2 @@
+vagrant ssh nc
+clear
