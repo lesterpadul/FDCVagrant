@@ -18,3 +18,7 @@ pecl install Xdebug
 echo "Transferring php php.ini file"
 cat /vagrant/conf/box.phpunit/php.ini
 cp /vagrant/conf/box.phpunit/php.ini /etc/php.ini
+
+echo "Install php-fpm"
+yum -y install php-fpm
+sudo service php-fpm restart
