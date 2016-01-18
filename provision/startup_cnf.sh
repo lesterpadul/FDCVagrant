@@ -5,6 +5,7 @@ sudo service httpd start
 echo "Starting NodeJS"
 cd /vagrant/workspace/nativecamp-njs && node server.js
 echo -ne '\n'
+echo -ne '\n'
 
 echo "Enabling permissions"
 cd /vagrant/workspace/nativecamp && chmod -R 777 user/webroot && chmod -R 777 user/tmp
