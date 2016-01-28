@@ -1,0 +1,4 @@
+#!/bin/bash
+echo INITIATING VAGRANT UP
+cd "$(dirname "${BASH_SOURCE[0]}")/../.."
+vagrant halt && vagrant up phpunit --provision && vagrant ssh phpunit

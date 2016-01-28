@@ -1,0 +1,5 @@
+#!/bin/bash
+clear
+echo PROVISIONING
+cd "$(dirname "${BASH_SOURCE[0]}")/../.."
+vagrant provision
