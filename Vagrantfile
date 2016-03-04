@@ -10,6 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 80, host: 80 # for http
   config.vm.network "forwarded_port", guest: 443, host: 443 # for https
   config.vm.network "forwarded_port", guest: 8080, host: 8080 # for nodejs
+  config.vm.network "forwarded_port", guest: 8082, host: 8082 # for nodejs
   config.vm.network "forwarded_port", guest: 8000, host: 8000 # for python
   config.vm.network "forwarded_port", guest: 4378, host: 4378 # for turn server
   config.vm.network "forwarded_port", guest: 5766, host: 5766 # for turn server
