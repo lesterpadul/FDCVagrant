@@ -4,7 +4,7 @@ var fs = require("fs");
 /* declare constants */
 module.exports = {
 	/* set default port */
-	port: 8082,
+	port: 3000,
 	
 	/* database information */
 	dbName: "english",
