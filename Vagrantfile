@@ -14,7 +14,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 8000, host: 8000 # for python
   config.vm.network "forwarded_port", guest: 4378, host: 4378 # for turn server
   config.vm.network "forwarded_port", guest: 5766, host: 5766 # for turn server
-  
   config.vm.network "forwarded_port", guest: 3478, host: 3478 # for turn server
   config.vm.network "forwarded_port", guest: 5349, host: 5349 # for turn server
 
