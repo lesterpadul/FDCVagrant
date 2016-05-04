@@ -6,7 +6,6 @@ workspace/*
 !workspace/icons
 !workspace/fdc_test
 !workspace/nativecamp-njs-restructure
-workspace/nativecamp-njs-restructure/node_modules
 
 # box
 package.box
