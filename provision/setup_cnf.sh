@@ -16,3 +16,9 @@ echo "Upgrading NODEJS"
 sudo npm cache clean -f
 sudo npm install -g n
 sudo n stable
+
+echo "Updating NODEJS NPM pacakges"
+cd /var/www/NativeCamp-NJSv2
+sudo npm install --verbose --no-bin-links
+cd /var/www/NativeCamp-NJSBroadcast
+sudo npm install --verbose --no-bin-links
