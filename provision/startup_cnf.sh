@@ -10,6 +10,6 @@ echo "Starting NodeJSv2"
 cd /var/www/NativeCamp-NJSv2 && nohup node server.js > /dev/null 2>&1 &
 
 echo "Starting NodeJS Broadcast"
-cd /var/www/NativeCamp-NJSBroadcast && nohup node server.js > /dev/null 2>&1 & null
+cd /var/www/NativeCamp-NJSBroadcast && nohup node server.js > /dev/null 2>&1 &
 
 echo "Start up complete!";
