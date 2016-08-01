@@ -22,6 +22,3 @@ cd /var/www/NativeCamp-NJSv2
 sudo npm install --verbose --no-bin-links
 cd /var/www/NativeCamp-NJSBroadcast
 sudo npm install --verbose --no-bin-links
-
-echo "Installing Forever "
-sudo npm install forever --verbose --global
