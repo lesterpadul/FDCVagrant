@@ -11,3 +11,6 @@ package.box
 
 # vagrant folder
 .vagrant/*
+
+# ignore vagrant file
+Vagrantfile
