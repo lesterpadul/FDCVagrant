@@ -34,7 +34,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # run phpunit setup
     phpunit.vm.provision :shell, :path => "./provision/setup_cnf_phpunit.sh", privileged: true, run: "once"
     phpunit.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
-
+    phpunit.vm.provision :shell, :path => "./commands/general/triggerNodeServers.sh", run: "always"
+		
     # virtual machine information
     phpunit.vm.provider "virtualbox" do |v|
       v.name = "phpunit-machine"
@@ -46,6 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # run php unit setup
     nc.vm.provision :shell, :path => "./provision/setup_cnf_nc.sh", privileged: true, run: "once"
     nc.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
+    nc.vm.provision :shell, :path => "./commands/general/triggerNodeServers.sh", run: "always"
 
     # virtual machine information
     nc.vm.provider "virtualbox" do |v|
@@ -57,7 +59,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       system('echo "
         rdr pass on lo0 inet proto tcp from any to 127.0.0.1 port 80 -> 127.0.0.1 port 8080  
         rdr pass on lo0 inet proto tcp from any to 127.0.0.1 port 443 -> 127.0.0.1 port 4443
-  " | sudo pfctl -ef - > /dev/null 2>&1; echo "==> Fowarding Ports: 80 -> 8080, 443 -> 4443 & Enabling pf"')  
+  " | sudo pfctl -ef - > /dev/null 2>&1; echo "==> Fowarding Ports: 80 -> 8080, 443 -> 4443 & Enabling pf"')
   end
 
   config.trigger.after [:halt, :destroy] do
