@@ -5,6 +5,7 @@ workspace/*
 !workspace/html
 !workspace/icons
 !workspace/fdc_test
+!workspace/node_js_servers.zip
 
 # box
 package.box
