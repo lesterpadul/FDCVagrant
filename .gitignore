@@ -13,4 +13,4 @@ package.box
 .vagrant/*
 
 # ignore vagrant file
-Vagrantfile
+# Vagrantfile
