@@ -4,6 +4,7 @@ workspace/*
 !workspace/error
 !workspace/icons
 !workspace/html
+!workspace/nativecamp_njsv2.zip
 
 # vagrant folder
 .vagrant/*
