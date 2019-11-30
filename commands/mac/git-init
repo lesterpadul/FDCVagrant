@@ -1,8 +1,0 @@
-#!/bin/bash
-clear
-echo SYNCHRONIZING GIT
-cd "$(dirname "${BASH_SOURCE[0]}")/../.."
-git remote rm origin
-git remote add origin https://github.com/lesterpadul/FDCVagrant.git
-git fetch origin master
-git reset --hard FETCH_HEAD

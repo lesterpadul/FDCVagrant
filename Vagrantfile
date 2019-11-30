@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
   # synced folders
   config.vm.synced_folder "./workspace", "/var/www", create: true, owner: "apache", group: "apache", mount_options: ["dmode=775,fmode=664"]
   config.vm.synced_folder "./conf/vhost", "/etc/httpd/conf.d", create: true, owner: "apache", group: "apache", mount_options: ["dmode=775,fmode=664"]
-  
+    
   # ssh
   config.ssh.forward_agent = true
   config.ssh.username = "vagrant"

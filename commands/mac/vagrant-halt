@@ -1,6 +1,0 @@
-#!/bin/bash
-clear
-echo HALTING VAGRANT
-cd "$(dirname "${BASH_SOURCE[0]}")/../.."
-vagrant halt
-echo VAGRANT STOPPED

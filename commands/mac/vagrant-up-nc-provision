@@ -1,5 +1,0 @@
-#!/bin/bash
-clear
-echo INITIATING VAGRANT UP WITH PROVISION
-cd "$(dirname "${BASH_SOURCE[0]}")/../.."
-vagrant halt && vagrant up nc --provision && vagrant ssh nc
