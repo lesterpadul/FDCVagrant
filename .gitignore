@@ -1,17 +1,9 @@
 # workspace files
 workspace/*
 !workspace/cgi-bin
-!workspace/err
-!workspace/html
+!workspace/error
 !workspace/icons
-!workspace/fdc_test
-!workspace/node_js_servers.zip
-
-# box
-package.box
+!workspace/html
 
 # vagrant folder
 .vagrant/*
-
-# ignore vagrant file
-# Vagrantfile
