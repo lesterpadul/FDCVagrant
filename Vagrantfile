@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     # run newnc setup
     nc2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
     nc2.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", privileged: false, run: "always"
-
+    
     # virtual machine informtaion
     nc2.vm.provider "virtualbox" do |v|
       v.name = "nc2-machine"
