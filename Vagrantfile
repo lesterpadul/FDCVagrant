@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
   config.vm.box_check_update = false
   
   # newnc machine
-  config.vm.define "nc2" do |nc2|
+  config.vm.define "ncv2" do |nc2|
     # run newnc setup
     nc2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
     nc2.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", privileged: false, run: "always"
@@ -30,7 +30,7 @@ Vagrant.configure("2") do |config|
   end
   
   # newphpunit
-  config.vm.define "phpunit2" do |phpunit2|
+  config.vm.define "phpunitv2" do |phpunit2|
     # run phpunitnew setup
 
     phpunit2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
