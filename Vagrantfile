@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "phpunitv2" do |phpunit2|
     # box
     phpunit2.vm.box = "fdc.phpunitv2"
-    phpunit2.vm.box_url = "ncv2.box"
+    phpunit2.vm.box_url = "phpunitv2.box"
     
     # run phpunitnew setup
     phpunit2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
