@@ -1,8 +1,4 @@
 Vagrant.configure("2") do |config|
-  # box
-  config.vm.box = "fdc.nc2"
-  config.vm.box_url = ""
-  
   # synced folders
   config.vm.synced_folder "./workspace", "/var/www", create: true, owner: "apache", group: "apache", mount_options: ["dmode=775,fmode=664"]
   config.vm.synced_folder "./conf/vhost", "/etc/httpd/conf.d", create: true, owner: "apache", group: "apache", mount_options: ["dmode=775,fmode=664"]
@@ -19,10 +15,14 @@ Vagrant.configure("2") do |config|
   
   # newnc machine
   config.vm.define "ncv2" do |nc2|
+    # box
+    nc2.vm.box = ""
+    nc2.vm.box_url = ""
+    
     # run newnc setup
     nc2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
     nc2.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", privileged: false, run: "always"
-
+    
     # virtual machine informtaion
     nc2.vm.provider "virtualbox" do |v|
       v.name = "nc2-machine"
@@ -31,10 +31,13 @@ Vagrant.configure("2") do |config|
   
   # newphpunit
   config.vm.define "phpunitv2" do |phpunit2|
+    # box
+    phpunit2.vm.box = ""
+    phpunit2.vm.box_url = ""
+    
     # run phpunitnew setup
-
     phpunit2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
-
+    
     # virtual machine information
     phpunit2.vm.provider "virtualbox" do |v|
       v.name = "phpunit2-machine"
