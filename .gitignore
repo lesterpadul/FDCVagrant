@@ -8,3 +8,6 @@ workspace/*
 
 # vagrant folder
 .vagrant/*
+
+# ignore all box files
+*.box
