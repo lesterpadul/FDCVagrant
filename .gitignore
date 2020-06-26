@@ -4,7 +4,11 @@ workspace/*
 !workspace/error
 !workspace/icons
 !workspace/html
+!workspace/myadmin
 !workspace/nativecamp_njsv2.zip
 
 # vagrant folder
 .vagrant/*
+
+# ignore all box files
+*.box
