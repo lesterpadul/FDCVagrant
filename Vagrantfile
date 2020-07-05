@@ -1,8 +1,4 @@
-Vagrant.configure("2") do |config|
-  # synced folders
-  config.vm.synced_folder "./workspace", "/var/www", create: true, owner: "apache", group: "apache", mount_options: ["dmode=775,fmode=664"]
-  config.vm.synced_folder "./conf/vhost", "/etc/httpd/conf.d", create: true, owner: "apache", group: "apache", mount_options: ["dmode=775,fmode=664"]
-    
+Vagrant.configure("2") do |config|   
   # ssh
   config.ssh.forward_agent = true
   config.ssh.username = "vagrant"
@@ -15,6 +11,10 @@ Vagrant.configure("2") do |config|
   
   # newnc machine
   config.vm.define "ncv2" do |nc2|
+    # synced folders
+    # config.vm.synced_folder "./workspace", "/var/www", create: true, owner: "apache", group: "apache", mount_options: ["dmode=775,fmode=664"]
+    # config.vm.synced_folder "./conf/vhost", "/etc/httpd/conf.d", create: true, owner: "apache", group: "apache", mount_options: ["dmode=775,fmode=664"]
+    
     # box
     nc2.vm.box = "fdc.ncv2"
     nc2.vm.box_url = "ncv2.box"
@@ -32,17 +32,18 @@ Vagrant.configure("2") do |config|
   end
   
   # newphpunit
-  config.vm.define "phpunitv2" do |phpunit2|
+  config.vm.define "ncphp7v2" do |nc2|
     # box
-    phpunit2.vm.box = "fdc.phpunitv2"
-    phpunit2.vm.box_url = "phpunitv2.box"
+    nc2.vm.box = "bento/amazonlinux-2"
     
-    # run phpunitnew setup
-    phpunit2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
-
-    # virtual machine information
-    phpunit2.vm.provider "virtualbox" do |v|
-      v.name = "phpunit2-machine"
+    # run newnc setup
+    config.vm.synced_folder "./workspace", "/var/www"
+    #nc2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
+    #nc2.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", privileged: false, run: "always"
+    
+    # virtual machine informtaion
+    nc2.vm.provider "virtualbox" do |v|
+      v.name = "ncphp7-machine"
       v.memory = 2048
       v.cpus = 2
     end

@@ -74,7 +74,7 @@ SSLCryptoDevice builtin
 <VirtualHost _default_:443>
 
 # General setup for the virtual host, inherited from global configuration
-DocumentRoot "/var/www/NativeCamp"
+#DocumentRoot "/var/www/html"
 #ServerName www.example.com:443
 
 # Use separate log files for the SSL virtual host; note that LogLevel
@@ -89,13 +89,14 @@ SSLEngine on
 
 #   SSL Protocol support:
 # List the enable protocol levels with which clients will be able to
-# connect.  Disable SSLv2 access by default:
-SSLProtocol all -SSLv2
+# connect.  Disable SSLv3 access by default:
+SSLProtocol all -SSLv3
+SSLProxyProtocol all -SSLv3
 
 #   SSL Cipher Suite:
 # List the ciphers that the client is permitted to negotiate.
 # See the mod_ssl documentation for a complete list.
-SSLCipherSuite DEFAULT:!EXP:!SSLv2:!DES:!IDEA:!SEED:+3DES
+SSLCipherSuite ALL:!ADH:!EXPORT:!SSLv2:RC4+RSA:+HIGH:+MEDIUM:+LOW
 
 #   Server Certificate:
 # Point SSLCertificateFile at a PEM encoded certificate.  If
