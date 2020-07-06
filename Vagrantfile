@@ -11,10 +11,6 @@ Vagrant.configure("2") do |config|
   
   # newnc machine
   config.vm.define "ncv2" do |nc2|
-    # synced folders
-    # config.vm.synced_folder "./workspace", "/var/www", create: true, owner: "apache", group: "apache", mount_options: ["dmode=775,fmode=664"]
-    # config.vm.synced_folder "./conf/vhost", "/etc/httpd/conf.d", create: true, owner: "apache", group: "apache", mount_options: ["dmode=775,fmode=664"]
-    
     # box
     nc2.vm.box = "fdc.ncv2"
     nc2.vm.box_url = "ncv2.box"
@@ -38,7 +34,9 @@ Vagrant.configure("2") do |config|
     
     # run newnc setup
     config.vm.synced_folder "./workspace", "/var/www"
-    #nc2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
+    config.vm.synced_folder "./conf/vhost", "/etc/httpd/conf.d"
+
+    nc2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
     #nc2.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", privileged: false, run: "always"
     
     # virtual machine informtaion
