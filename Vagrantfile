@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "./conf/vhost", "/etc/httpd/conf.d"
 
     nc2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
-    #nc2.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", privileged: false, run: "always"
+    nc2.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", privileged: true, run: "always"
     
     # virtual machine informtaion
     nc2.vm.provider "virtualbox" do |v|
