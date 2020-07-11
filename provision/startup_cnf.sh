@@ -11,8 +11,8 @@ sudo service httpd start
 
 # control mysqld
 echo "Restart mysqld"
-sudo service mysqld stop
-sudo service mysqld start
+sudo service mariadb stop
+sudo service mariadb start
 
 # control memcached
 echo "Restart memcached"
