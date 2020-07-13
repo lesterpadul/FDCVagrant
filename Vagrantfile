@@ -30,8 +30,9 @@ Vagrant.configure("2") do |config|
   # newphpunit
   config.vm.define "ncphp7v2" do |nc2|
     # box
-    nc2.vm.box = "bento/amazonlinux-2"
-    
+    nc2.vm.box = "ncphp7v2"
+    nc2.vm.box_url = "ncphp7v2.box"
+
     # run newnc setup
     config.vm.synced_folder "./workspace", "/var/www"
     config.vm.synced_folder "./conf/vhost", "/etc/httpd/conf.d"
