@@ -9,24 +9,6 @@ Vagrant.configure("2") do |config|
   # disable update
   config.vm.box_check_update = false
   
-  # newnc machine
-  config.vm.define "ncv2" do |nc2|
-    # box
-    nc2.vm.box = "fdc.ncv2"
-    nc2.vm.box_url = "ncv2.box"
-    
-    # run newnc setup
-    nc2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
-    nc2.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", privileged: false, run: "always"
-    
-    # virtual machine informtaion
-    nc2.vm.provider "virtualbox" do |v|
-      v.name = "nc2-machine"
-      v.memory = 2048
-      v.cpus = 2
-    end
-  end
-  
   # newphpunit
   config.vm.define "ncphp7v2" do |nc2|
     # box
