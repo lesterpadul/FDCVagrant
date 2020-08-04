@@ -1,8 +1,8 @@
 # always enable php 7.3
 sudo amazon-linux-extras enable lamp-mariadb10.2-php7.2
 sudo amazon-linux-extras disable lamp-mariadb10.2-php7.2
-sudo amazon-linux-extras enable php7.3
-sudo amazon-linux-extras disable php7.3
+sudo amazon-linux-extras enable php7.4
+sudo amazon-linux-extras disable php7.4
 
 # control apache2
 echo "Restart HTTPD"
