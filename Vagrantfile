@@ -8,11 +8,11 @@ Vagrant.configure("2") do |config|
     
     # disable update
     config.vm.box_check_update = false
-    
+
     # run newnc setup
     config.vm.synced_folder "./workspace", "/var/www"
-    config.vm.synced_folder "./conf/vhost", "/etc/httpd/conf.d"
-    
+    config.vm.synced_folder "./conf/vhost/", "/etc/httpd/conf.d/"
+
     # newphpunit
     config.vm.define "nc7" do |nc7|
         # box info
@@ -20,9 +20,9 @@ Vagrant.configure("2") do |config|
         nc7.vm.box = "ncboxv2.box"
         
         # provision
-        nc2.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
-        nc2.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", privileged: true, run: "always"
-
+        nc7.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
+        nc7.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", run: "always"
+        
         # virtual machine information
         nc7.vm.provider "virtualbox" do |v|
             v.name = "nc7-machine"
