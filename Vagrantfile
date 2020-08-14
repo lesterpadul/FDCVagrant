@@ -17,12 +17,12 @@ Vagrant.configure("2") do |config|
     config.vm.define "nc7" do |nc7|
         # box info
         nc7.vm.box = "nc7.box"
-        nc7.vm.box = "ncboxv2.box"
+        nc7.vm.box_url = "ncboxv2.box"
         
         # provision
         nc7.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
-        nc7.vm.provision :shell, :path => "./provision/startup_cnf_node.sh", run: "always"
-        
+        nc7.vm.provision :shell, :path => "./provision/startup_cnf_node.sh",privileged: false,  run: "always"
+
         # virtual machine information
         nc7.vm.provider "virtualbox" do |v|
             v.name = "nc7-machine"
