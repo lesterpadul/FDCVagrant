@@ -1,1 +1,0 @@
-mkdir /home/njs_logs
