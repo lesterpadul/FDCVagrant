@@ -13,11 +13,11 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "./workspace", "/var/www"
     config.vm.synced_folder "./conf/vhost/", "/etc/httpd/conf.d/"
 
-    # newphpunit
+    # php7
     config.vm.define "nc7" do |nc7|
         # box info
         nc7.vm.box = "nc7.box"
-        nc7.vm.box_url = "ncboxv2.box"
+        nc7.vm.box_url = "nc7vbox.box"
         
         # provision
         nc7.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
