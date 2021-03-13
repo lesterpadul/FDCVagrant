@@ -1,0 +1,9 @@
+{
+	"uid": "nativecamp_signaling",
+	"append": true,
+	"logFile": "/home/njs_logs/forever.log",
+	"outFile": "/home/njs_logs/output.log",
+	"errFile": "/home/njs_logs/error.log",
+	"script": "server.js",
+	"command": "node --expose-gc"
+}
