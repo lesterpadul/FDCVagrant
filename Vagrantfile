@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
     # run newnc setup
     config.vm.synced_folder "./workspace", "/var/www"
     config.vm.synced_folder "./conf/vhost/", "/etc/httpd/conf.d/"
-
+    
     # php7
     config.vm.define "nc7" do |nc7|
         # box info

@@ -5,7 +5,7 @@ workspace/*
 !workspace/icons
 !workspace/html
 !workspace/myadmin
-!workspace/nativecamp_njsv2
+!workspace/nativecamp_njsv2.tar.gz
 
 # vagrant folder
 .vagrant/*
