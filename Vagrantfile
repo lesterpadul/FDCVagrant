@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
     config.ssh.password = "vagrant"
     config.ssh.insert_key = false
     config.vm.network "private_network", ip: "192.168.33.11"
-    
+
     # disable update
     config.vm.box_check_update = false
 
@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
         # box info
         nc7.vm.box = "nc7.box"
         nc7.vm.box_url = "nc7vbox.box"
-        
+
         # provision
         nc7.vm.provision :shell, :path => "./provision/startup_cnf.sh", privileged: true, run: "always"
         nc7.vm.provision :shell, :path => "./provision/startup_cnf_node.sh",privileged: false,  run: "always"
